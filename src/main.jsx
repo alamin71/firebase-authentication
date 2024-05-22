@@ -9,6 +9,8 @@ import {
 import Root from './Componenet/Root/Root.jsx';
 import Home from './Componenet/Home/Home.jsx';
 import Register from './Componenet/Register/Register.jsx';
+import Login from './Componenet/Login/Login.jsx';
+import HeroRegister from './Componenet/HeroRegister/HeroRegister.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,12 +23,16 @@ const router = createBrowserRouter([
       },
       {
         path:'/login',
-        element: <login></login>,
+        element: <Login></Login>
       },
       {
         path:'/register',
-        element:<Register></Register>
+        element:<Register></Register>,
 
+      },
+      {
+        path:'/heroRegister',
+        element:<HeroRegister></HeroRegister>
       }
 
     ]

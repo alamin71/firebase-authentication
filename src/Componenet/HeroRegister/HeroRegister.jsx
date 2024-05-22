@@ -1,3 +1,5 @@
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import auth from "../../Firebase/Firebase.config";
 
 
 const HeroRegister = () => {
@@ -6,6 +8,14 @@ const HeroRegister = () => {
         const email = e.target.email.value
         const password = e.target.password.value;
         console.log(email, password)
+
+        createUserWithEmailAndPassword(auth,email,password)
+        .then(result=>{
+            console.log(result.user);
+        })
+        .catch(error=>{
+            console.error(error);
+        })
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -32,7 +42,7 @@ const HeroRegister = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn btn-primary">Register</button>
                         </div>
                     </form>
                 </div>
